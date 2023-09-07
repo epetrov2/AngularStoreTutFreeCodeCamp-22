@@ -35,7 +35,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
-    MatModule,
     MatListModule,
     MatToolbarModule,
     MatTableModule,
