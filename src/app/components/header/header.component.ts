@@ -31,8 +31,6 @@ getTotal(items: Array<CartItem>): number {
 
 onClearCart(): void {
   this.cartService.clearCart();
-  console.log('onClearCart');
-  
 }
 
 }
