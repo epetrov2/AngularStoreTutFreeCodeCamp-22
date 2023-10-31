@@ -8,20 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent {
   cart: Cart = {
-    items: [{
-      product: 'https://via.placeholder.com/150',
-      name: 'snickers',
-      price: 150,
-      quantity: 2,
-      id: 1
-    },
-    {
-      product: 'https://via.placeholder.com/150',
-      name: 'snickers long name fdsdsf sdf sdfdsf sdfsd adsad sd',
-      price: 250,
-      quantity: 1,
-      id: 1
-    }]
+    items: []
   };
 
   dataSource: Array<CartItem> = [];
@@ -37,9 +24,11 @@ export class CartComponent {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    
-    this.cartService.cart.subscribe((_cart: Cart) => this.cart = _cart)
-    this.dataSource = this.cart.items;
+
+    this.cartService.cart.subscribe((_cart: Cart) => {
+      this.cart = _cart
+      this.dataSource = _cart.items;
+    });
   }
 
   getTotal(items: Array<CartItem>): number {
